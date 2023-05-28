@@ -64,10 +64,10 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach ($products as $key=>$product)
+                    @foreach ($products as $product)
                         <tr>
-                            <td>{{$products->firstItem() + $key}}</td>
-                            <td>{{$product->title}} <br> Created at : {{Carbon\Carbon::parse($product->created_at)->format('d-M-y')}}</td>
+                            <td>{{$loop->iteration }}</td>
+                            <td>{{$product->title}} <br> Created at : {{Carbon\Carbon::parse($product->created_at)->format('d-M-yy')}}</td>
                             <td>Quality product in low cost</td>
                             <td>
                                 <dl class="row mb-0" style="height: 80px; overflow: hidden" id="variant{{$product->id}}">
